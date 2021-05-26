@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+$blue: #2b2e4a;
+$red: #dd0f1b;
+$darkred: #903749;
+
+$background-color: $blue;
+$alternative: #53354a;
+
+$primary: $red;
+$family-primary: 'Raleway', sans-serif;
+
+html,
+body {
+  background-color: $background-color;
+  height: 100%;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+// Import Bulma
+@import '~bulma';
