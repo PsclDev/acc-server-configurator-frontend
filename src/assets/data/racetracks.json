@@ -1,0 +1,156 @@
+{
+    "tracks": [
+        {
+            "name": "Barcelona",
+            "section": "Grand Prix Circuit",
+            "image": "track_barcelona.png",
+            "location": "spain",
+            "dlc": "None",
+            "km": "4.655"
+        },
+        {
+            "name": "Bathurst",
+            "section": "Mount Panaroma Circuit",
+            "image": "track_bathurst.png",
+            "location": "australia",
+            "dlc": "ICGT",
+            "km": "6.213"
+        },
+        {
+            "name": "Brands Hatch",
+            "section": "Grand Prix Circuit",
+            "image": "track_brands_hatch.png",
+            "location": "united_kingdom",
+            "dlc": "None",
+            "km": "3.916"
+        },
+        {
+            "name": "Donington Park",
+            "section": "Grand Prix Circuit",
+            "image": "track_donington.png",
+            "location": "united_kingdom",
+            "dlc": "BGT",
+            "km": "4.020"
+        },
+        {
+            "name": "Hungaroring",
+            "section": "Grand Prix Circuit",
+            "image": "track_hungaroring.png",
+            "location": "hungary",
+            "dlc": "None",
+            "km": "4.381"
+        },
+        {
+            "name": "Imola",
+            "section": "Grand Prix Circuit",
+            "image": "track_imola.png",
+            "location": "italy",
+            "dlc": "2020 GT WC",
+            "km": "4.909"
+        },
+        {
+            "name": "Kyalami",
+            "section": "Grand Prix Circuit",
+            "image": "track_kyalami.png",
+            "location": "south_africa",
+            "dlc": "ICGT",
+            "km": "4.580"
+        },
+        {
+            "name": "Laguna Seca",
+            "section": "Road Course",
+            "image": "track_laguna_seca.png",
+            "location": "united_states",
+            "dlc": "ICGT",
+            "km": "3.602"
+        },
+        {
+            "name": "Misano",
+            "section": "Grand Prix Circuit",
+            "image": "track_misano.png",
+            "location": "italy",
+            "dlc": "None",
+            "km": "4.200"
+        },
+        {
+            "name": "Monza",
+            "section": "Road Course",
+            "image": "track_monza.png",
+            "location": "italy",
+            "dlc": "None",
+            "km": "5.793"
+        },
+        {
+            "name": "Nurburgring",
+            "section": "Grand Prix Circuit + Mercedes Arena",
+            "image": "track_nurburgring.png",
+            "location": "germany",
+            "dlc": "None",
+            "km": "5.137"
+        },
+        {
+            "name": "Oulton Park",
+            "section": "International Circuit",
+            "image": "track_oulton_park.png",
+            "location": "united_kingdom",
+            "dlc": "BGT",
+            "km": "4.333"
+        },
+        {
+            "name": "Paul Ricard",
+            "section": "Circuit 1A-V2",
+            "image": "track_paul_ricard.png",
+            "location": "france",
+            "dlc": "None",
+            "km": "5.770"
+        },
+        {
+            "name": "Silverstone",
+            "section": "Grand Prix Arena Circuit (Original Pits)",
+            "image": "track_silverstone.png",
+            "location": "united_kingdom",
+            "dlc": "None",
+            "km": "5.890"
+        },
+        {
+            "name": "Snetterton",
+            "section": "300",
+            "image": "track_snetterton_300.png",
+            "location": "united_kingdom",
+            "dlc": "BGT",
+            "km": "4.779"
+        },
+        {
+            "name": "Spa-Francorchamps",
+            "section": "Grand Prix Circuit (F1 Pits)",
+            "image": "track_spa.png",
+            "location": "belgium",
+            "dlc": "None",
+            "km": "7.004"
+        },
+        {
+            "name": "Suzuka",
+            "section": "Grand Prix Circuit",
+            "image": "track_suzuka.png",
+            "location": "japan",
+            "dlc": "ICGT",
+            "km": "5.807"
+        },
+        {
+            "name": "Zandvoort",
+            "section": "Grand Prix Circuit",
+            "image": "track_zandvoort.png",
+            "location": "netherlands",
+            "dlc": "FREE",
+            "km": "4.320"
+        },
+        {
+            "name": "Zolder",
+            "section": "Grand Prix Circuit",
+            "image": "track_zolder.png",
+            "location": "belgium",
+            "dlc": "None",
+            "km": "4.010"
+        }
+    ]
+}
