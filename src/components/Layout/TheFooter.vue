@@ -1,0 +1,34 @@
+<template>
+  <footer>
+    <div class="container">
+      <img alt="UnRunDead Logo" src="../../assets/images/urdLogo.png" />
+      <h3>
+        <a
+          class="has-text-primary"
+          href="https://twitter.com/unrundead"
+          target="_blank"
+          >Created by UnRunDead</a
+        >
+      </h3>
+      <div class="has-text-gray-lighter mt-3">
+        <p>Credits</p>
+        <p>
+          Icons made by
+          <a
+            class="has-text-grey-dark"
+            href="https://www.freepik.com"
+            target="_blank"
+            >Freepik</a
+          >
+          from
+          <a
+            class="has-text-grey-dark"
+            href="https://www.flaticon.com/"
+            target="_blank"
+            >www.flaticon.com</a
+          >
+        </p>
+      </div>
+    </div>
+  </footer>
+</template>
