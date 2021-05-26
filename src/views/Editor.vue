@@ -1,6 +1,6 @@
 <template>
-  <p>Editor</p>
   <TheNavbar />
+  <router-view class="mt-5"></router-view>
 </template>
 
 <script>
