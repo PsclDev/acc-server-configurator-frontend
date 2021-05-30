@@ -1,3 +1,0 @@
-<template>
-  <p>Results</p>
-</template>
