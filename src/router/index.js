@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Settings from '../components/settings.vue';
-import Results from '../components/results.vue';
+import SettingsList from '../components/Settings/SettingsList.vue';
+import ResultsList from '../components/Results/ResultsList.vue';
 
 const routes = [
   {
-    path: '/settings', component: Settings
+    path: '/settings', component: SettingsList
   }, {
-    path: '/results', component: Results
+    path: '/results', component: ResultsList
   }
 ];
 
