@@ -43,6 +43,13 @@ export default {
             context.commit('setToken', {
                 token: accessToken
             })
+
+            var decoded = jwt_decode(accessToken);
+            const currentTime = new Date();
+            const expirationTime = new Date(decoded.exp * 1000)
+            var msLeftToLogout = (expirationTime - currentTime);
+
+            context.dispatch('setAutoLogOutTimeout', msLeftToLogout)
         } catch (error) {
             if (error.request.response.includes('Invalid Invitation Code')) {
                 const error = new Error('Invalid Invitation Code');
@@ -60,15 +67,15 @@ export default {
         const token = localStorage.getItem('token');
         if (!token)
             return;
-
         var decoded = jwt_decode(token);
-
-        const currentTime = new Date().getTime()
+        const currentTime = new Date();
         const expirationTime = new Date(decoded.exp * 1000)
-        const tokenExpired = expirationTime < currentTime;
+        var msLeftToLogout = (expirationTime - currentTime);
 
-        if (tokenExpired)
+        if (msLeftToLogout < 0)
             context.dispatch('logout')
+
+        context.dispatch('setAutoLogOutTimeout', msLeftToLogout)
 
         context.commit('setToken', {
             token: token
@@ -77,6 +84,11 @@ export default {
             username: decoded.username,
             permissions: decoded.permissions
         })
+    },
+    async setAutoLogOutTimeout(context, ms) {
+        setTimeout(() => {
+            context.dispatch('logout')
+        }, ms)
     },
     async logout(context) {
         context.commit('setToken', {
