@@ -7,12 +7,14 @@ import BaseCard from './components/UI/BaseCard';
 
 import '@/assets/styles/main.scss';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser, faKey, faUserTag } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faKey, faUserTag, faUserShield, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faUser);
 library.add(faKey);
 library.add(faUserTag);
+library.add(faUserShield);
+library.add(faUserCog);
 
 const app = createApp(App);
 
