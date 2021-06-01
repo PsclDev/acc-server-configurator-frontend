@@ -1,19 +1,21 @@
 <template>
   <div class="container">
-    <h1 class="has-text-left is-size-5">Test Abc</h1>
-    <p class="has-text-left is-size-7 mb-2">
-      Hallo dies ist eine Testbeschreibung
-    </p>
+    <h1 class="has-text-left has-text-link has-text-weight-bold is-size-5">
+      {{ name }}
+    </h1>
+    <p v-html="description" class="has-text-left is-size-7 mb-2" />
     <div class="container is-flex">
       <font-awesome-icon
-        :icon="requiresAdmin ? 'user-shield' : 'user-cog'"
-        :class="requiresAdmin ? 'has-text-primary' : ''"
+        :icon="permissions ? 'user-shield' : 'user-cog'"
+        :class="permissions ? 'has-text-primary' : ''"
         class="mr-2 is-align-self-center"
       />
       <input
         class="input is-small"
-        :class="requiresAdmin ? 'is-primary' : ''"
-        type="text"
+        :class="permissions ? 'is-primary' : ''"
+        :disabled="hasAdminRights"
+        :type="valueType"
+        :value="value"
       />
     </div>
   </div>
@@ -22,11 +24,11 @@
 <script>
 export default {
   props: {
-    permissions: {
+    requiredPermissions: {
       type: String,
       required: true
     },
-    title: {
+    name: {
       type: String,
       required: true
     },
@@ -39,13 +41,18 @@ export default {
       required: true
     },
     value: {
-      type: String,
+      type: [String, Number, Boolean],
       required: true
     }
   },
   computed: {
-    requiresAdmin() {
-      if (this.permissions === 'admin') return true;
+    permissions() {
+      if (this.requiredPermissions.toLowerCase() === 'admin') return true;
+      return false;
+    },
+    hasAdminRights() {
+      const userPermission = this.$store.getters['auth/userPermissions'];
+      if (userPermission.toLowerCase() === 'admin') return true;
       return false;
     }
   }
