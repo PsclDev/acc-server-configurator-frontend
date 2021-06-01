@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import SettingsList from '../components/Settings/SettingsList.vue';
-import ResultsList from '../components/Results/ResultsList.vue';
+import Editor from '../views/Editor.vue';
+import Results from '../views/Results.vue';
 
 const routes = [
   {
-    path: '/settings', component: SettingsList
+    path: '/settings', component: Editor
   }, {
-    path: '/results', component: ResultsList
+    path: '/results', component: Results
   }
 ];
 

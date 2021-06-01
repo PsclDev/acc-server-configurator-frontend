@@ -1,22 +1,22 @@
 <template>
   <TheHeader />
   <Authentication v-if="!isLoggedIn" />
-  <Editor v-else />
-  <TheFooter />
+  <Main v-else />
+  <TheFooter class="mt-5" />
 </template>
 
 <script>
 import TheHeader from './components/Layout/TheHeader';
 import TheFooter from './components/Layout/TheFooter';
-import Authentication from './views/Authentication';
-import Editor from './views/Editor';
+import Authentication from './pages/Authentication';
+import Main from './pages/Main';
 
 export default {
   components: {
     TheHeader,
     TheFooter,
     Authentication,
-    Editor
+    Main
   },
   computed: {
     isLoggedIn() {
