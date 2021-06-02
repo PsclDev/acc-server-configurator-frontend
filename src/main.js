@@ -4,6 +4,7 @@ import router from './router';
 import store from './store/index';
 
 import BaseCard from './components/UI/BaseCard';
+import BaseCollapse from './components/UI/BaseCollapse';
 
 import '@/assets/styles/main.scss';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -21,6 +22,7 @@ library.add(faChevronDown);
 const app = createApp(App);
 
 app.component('base-card', BaseCard);
+app.component('base-collapse', BaseCollapse);
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 app.use(store);
