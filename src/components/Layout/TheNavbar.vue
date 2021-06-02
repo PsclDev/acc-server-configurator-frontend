@@ -3,18 +3,27 @@
     <div class="width centerContent">
       <a
         :class="
-          activeTab === 'results' ? 'has-text-white' : 'has-text-grey-dark'
+          activeTab === '/results' ? 'has-text-white' : 'has-text-grey-dark'
         "
-        class="mx-5"
+        class="mx-5 is-size-5"
         @click="results"
       >
         Results
       </a>
       <a
         :class="
-          activeTab === 'settings' ? 'has-text-white' : 'has-text-grey-dark'
+          activeTab === '/entrylist' ? 'has-text-white' : 'has-text-grey-dark'
         "
-        class="mx-5"
+        class="mx-5 is-size-5"
+        @click="entrylist"
+      >
+        Entry List
+      </a>
+      <a
+        :class="
+          activeTab === '/settings' ? 'has-text-white' : 'has-text-grey-dark'
+        "
+        class="mx-5 is-size-5"
         @click="settings"
       >
         Settings
@@ -22,25 +31,26 @@
     </div>
 
     <div class="width rightContent">
-      <a class="has-text-primary mx-5" @click="logout"> Logout </a>
+      <a class="has-text-primary mx-5 is-size-5" @click="logout"> Logout </a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      activeTab: ''
-    };
+  computed: {
+    activeTab() {
+      return this.$store.getters['app/activeTab'];
+    }
   },
   methods: {
+    entrylist() {
+      this.$router.push('/entrylist');
+    },
     settings() {
-      this.activeTab = 'settings';
       this.$router.push('/settings');
     },
     results() {
-      this.activeTab = 'results';
       this.$router.push('/results');
     },
     logout() {
