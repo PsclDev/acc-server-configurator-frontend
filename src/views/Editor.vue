@@ -1,10 +1,29 @@
 <template>
   <div>
-    <settings-list title="Assist Rules" :data="assistRules" />
-    <settings-list title="Configuration" :data="configuration" />
-    <settings-list title="Event" :data="event" />
-    <settings-list title="Event Rules" :data="eventRules" />
-    <settings-list title="Settings" :data="settings" />
+    <base-collapse title="Racetracks">
+      <racetrack-list />
+    </base-collapse>
+
+    <base-collapse title="Assist Rules">
+      <settings-list :data="assistRules" />
+    </base-collapse>
+
+    <base-collapse title="Configuration">
+      <settings-list :data="configuration" />
+    </base-collapse>
+
+    <base-collapse title="Event">
+      <settings-list :data="event" />
+    </base-collapse>
+
+    <base-collapse title="Event Rules">
+      <settings-list :data="eventRules" />
+    </base-collapse>
+
+    <base-collapse title="Settings">
+      <settings-list :data="settings" />
+    </base-collapse>
+
     <button class="button is-primary is-medium">
       Commit Changes to Server
     </button>
@@ -13,10 +32,12 @@
 
 <script>
 import SettingsList from '../components/Settings/SettingsList';
+import RacetrackList from '../components/Racetrack/RacetrackList';
 
 export default {
   components: {
-    SettingsList
+    SettingsList,
+    RacetrackList
   },
   computed: {
     assistRules() {
@@ -35,8 +56,13 @@ export default {
       return this.$store.getters['editor/settings'];
     }
   },
+  methods: {
+    async loadData() {
+      await this.$store.dispatch('editor/getEditorContent');
+    }
+  },
   async created() {
-    await this.$store.dispatch('editor/getEditorContent');
+    this.loadData();
   }
 };
 </script>
