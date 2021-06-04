@@ -10,6 +10,7 @@
           >Created by UnRunDead</a
         >
       </h3>
+      <p>Changelogs (Soon)</p>
       <div class="has-text-gray-lighter mt-3">
         <p>Credits</p>
         <p>

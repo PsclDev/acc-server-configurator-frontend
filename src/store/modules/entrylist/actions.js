@@ -15,7 +15,6 @@ export default {
         context.commit('setEntrylist', { list: response.data })
     },
     async addNewEntry(context, payload) {
-        console.log(payload);
         const newEntry = JSON.parse(`{"playerID": ["${payload.steamId}"]}`);
         newEntry.username = "username will be shown after commit"
 
