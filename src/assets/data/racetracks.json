@@ -6,7 +6,21 @@
             "image": "track_barcelona.png",
             "location": "spain",
             "dlc": "None",
-            "km": "4.655"
+            "km": "4.655",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "barcelona"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "barcelona_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "barcelona_2020"
+                }
+            ]
         },
         {
             "name": "Bathurst",
@@ -14,7 +28,13 @@
             "image": "track_bathurst.png",
             "location": "australia",
             "dlc": "ICGT",
-            "km": "6.213"
+            "km": "6.213",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "mount_panorama_2019"
+                }
+            ]
         },
         {
             "name": "Brands Hatch",
@@ -22,7 +42,21 @@
             "image": "track_brands_hatch.png",
             "location": "united_kingdom",
             "dlc": "None",
-            "km": "3.916"
+            "km": "3.916",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "brands_hatch"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "brands_hatch_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "brands_hatch_2020"
+                }
+            ]
         },
         {
             "name": "Donington Park",
@@ -30,7 +64,13 @@
             "image": "track_donington.png",
             "location": "united_kingdom",
             "dlc": "BGT",
-            "km": "4.020"
+            "km": "4.020",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "donington_2019"
+                }
+            ]
         },
         {
             "name": "Hungaroring",
@@ -38,7 +78,21 @@
             "image": "track_hungaroring.png",
             "location": "hungary",
             "dlc": "None",
-            "km": "4.381"
+            "km": "4.381",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "hungaroring"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "hungaroring_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "hungaroring_2020"
+                }
+            ]
         },
         {
             "name": "Imola",
@@ -46,7 +100,13 @@
             "image": "track_imola.png",
             "location": "italy",
             "dlc": "2020 GT WC",
-            "km": "4.909"
+            "km": "4.909",
+            "variations": [
+                {
+                    "name": "2020",
+                    "trackId": "imola_2020"
+                }
+            ]
         },
         {
             "name": "Kyalami",
@@ -54,7 +114,13 @@
             "image": "track_kyalami.png",
             "location": "south_africa",
             "dlc": "ICGT",
-            "km": "4.580"
+            "km": "4.580",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "kyalami_2019"
+                }
+            ]
         },
         {
             "name": "Laguna Seca",
@@ -62,7 +128,13 @@
             "image": "track_laguna_seca.png",
             "location": "united_states",
             "dlc": "ICGT",
-            "km": "3.602"
+            "km": "3.602",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "laguna_seca_2019"
+                }
+            ]
         },
         {
             "name": "Misano",
@@ -70,7 +142,21 @@
             "image": "track_misano.png",
             "location": "italy",
             "dlc": "None",
-            "km": "4.200"
+            "km": "4.200",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "misano"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "misano_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "misano_2020"
+                }
+            ]
         },
         {
             "name": "Monza",
@@ -78,7 +164,21 @@
             "image": "track_monza.png",
             "location": "italy",
             "dlc": "None",
-            "km": "5.793"
+            "km": "5.793",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "monza"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "monza_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "monza_2020"
+                }
+            ]
         },
         {
             "name": "Nurburgring",
@@ -86,7 +186,21 @@
             "image": "track_nurburgring.png",
             "location": "germany",
             "dlc": "None",
-            "km": "5.137"
+            "km": "5.137",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "nurburgring"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "nurburgring_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "nurburgring_2020"
+                }
+            ]
         },
         {
             "name": "Oulton Park",
@@ -94,7 +208,13 @@
             "image": "track_oulton_park.png",
             "location": "united_kingdom",
             "dlc": "BGT",
-            "km": "4.333"
+            "km": "4.333",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "oulton_park_2019"
+                }
+            ]
         },
         {
             "name": "Paul Ricard",
@@ -102,7 +222,21 @@
             "image": "track_paul_ricard.png",
             "location": "france",
             "dlc": "None",
-            "km": "5.770"
+            "km": "5.770",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "paul_ricard"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "paul_ricard_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "paul_ricard_2020"
+                }
+            ]
         },
         {
             "name": "Silverstone",
@@ -110,7 +244,21 @@
             "image": "track_silverstone.png",
             "location": "united_kingdom",
             "dlc": "None",
-            "km": "5.890"
+            "km": "5.890",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "silverstone"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "silverstone_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "silverstone_2020"
+                }
+            ]
         },
         {
             "name": "Snetterton",
@@ -118,7 +266,13 @@
             "image": "track_snetterton_300.png",
             "location": "united_kingdom",
             "dlc": "BGT",
-            "km": "4.779"
+            "km": "4.779",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "snetterton_2019"
+                }
+            ]
         },
         {
             "name": "Spa-Francorchamps",
@@ -126,7 +280,21 @@
             "image": "track_spa.png",
             "location": "belgium",
             "dlc": "None",
-            "km": "7.004"
+            "km": "7.004",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "spa"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "spa_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "spa_2020"
+                }
+            ]
         },
         {
             "name": "Suzuka",
@@ -134,7 +302,13 @@
             "image": "track_suzuka.png",
             "location": "japan",
             "dlc": "ICGT",
-            "km": "5.807"
+            "km": "5.807",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "suzuka_2019"
+                }
+            ]
         },
         {
             "name": "Zandvoort",
@@ -142,7 +316,21 @@
             "image": "track_zandvoort.png",
             "location": "netherlands",
             "dlc": "FREE",
-            "km": "4.320"
+            "km": "4.320",
+            "variations": [
+                {
+                    "name": "2018",
+                    "trackId": "zandvoort_2018"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "zandvoort_2019"
+                },
+                {
+                    "name": "2020",
+                    "trackId": "zandvoort_2020"
+                }
+            ]
         },
         {
             "name": "Zolder",
@@ -150,7 +338,21 @@
             "image": "track_zolder.png",
             "location": "belgium",
             "dlc": "None",
-            "km": "4.010"
+            "km": "4.010",
+            "variations": [
+                {
+                    "name": "2019",
+                    "trackId": "zolder_2018"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "zolder_2019"
+                },
+                {
+                    "name": "2019",
+                    "trackId": "zolder_2020"
+                }
+            ]
         }
     ]
 }
