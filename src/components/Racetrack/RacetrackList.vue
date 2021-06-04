@@ -11,6 +11,7 @@
       :location="track.location"
       :km="track.km"
       :dlc="track.dlc"
+      :variations="track.variations"
       @trackSelected="trackSelected"
     />
   </div>

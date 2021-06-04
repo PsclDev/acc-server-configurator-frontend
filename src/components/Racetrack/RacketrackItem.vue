@@ -15,6 +15,16 @@
         >
           DLC Required: {{ dlc }}
         </p>
+        <div class="control">
+          <label
+            class="radio"
+            v-for="variation in variations"
+            :key="variation.name"
+          >
+            <input type="radio" name="variation" :key="variation.trackId" />
+            {{ variation.name }}
+          </label>
+        </div>
         <a
           v-if="!isSelected"
           class="button is-outlined is-link mt-4"
@@ -58,6 +68,10 @@ export default {
     },
     dlc: {
       type: String,
+      required: true
+    },
+    variations: {
+      type: Array,
       required: true
     }
   },
