@@ -1,6 +1,7 @@
 <template>
   <settings-item
     class="mb-3"
+    :category="category"
     v-for="entry in data"
     :key="entry.name"
     :name="entry.name"
@@ -16,6 +17,10 @@ import SettingsItem from './SettingsItem';
 
 export default {
   props: {
+    category: {
+      type: String,
+      required: true
+    },
     data: {
       type: Array,
       required: true

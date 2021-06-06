@@ -16,6 +16,7 @@
         :disabled="hasAdminRights"
         :type="valueType"
         :value="value"
+        @blur="changeValue"
       />
     </div>
   </div>
@@ -29,6 +30,10 @@ export default {
       required: true
     },
     name: {
+      type: String,
+      required: true
+    },
+    category: {
       type: String,
       required: true
     },
@@ -54,6 +59,16 @@ export default {
       const userPermission = this.$store.getters['auth/userPermissions'];
       if (userPermission.toLowerCase() === 'admin') return true;
       return false;
+    }
+  },
+  methods: {
+    async changeValue(e) {
+      const value = e.target.value;
+      await this.$store.dispatch('editor/changeValue', {
+        category: this.category,
+        name: this.name,
+        value
+      });
     }
   }
 };

@@ -5,23 +5,23 @@
     </base-collapse>
 
     <base-collapse title="Assist Rules">
-      <settings-list :data="assistRules" />
+      <settings-list category="assistRules" :data="assistRules" />
     </base-collapse>
 
     <base-collapse title="Configuration">
-      <settings-list :data="configuration" />
+      <settings-list category="configuration" :data="configuration" />
     </base-collapse>
 
     <base-collapse title="Event">
-      <settings-list :data="event" />
+      <settings-list category="event" :data="event" />
     </base-collapse>
 
     <base-collapse title="Event Rules">
-      <settings-list :data="eventRules" />
+      <settings-list category="eventRules" :data="eventRules" />
     </base-collapse>
 
     <base-collapse title="Settings">
-      <settings-list :data="settings" />
+      <settings-list category="settings" :data="settings" />
     </base-collapse>
 
     <button class="button is-primary is-medium">
