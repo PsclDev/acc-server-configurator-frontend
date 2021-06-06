@@ -85,7 +85,6 @@ export default {
       this.isLoading = false;
     },
     async addNewEntry() {
-      console.log(this.steamId);
       await this.$store.dispatch('entryList/addNewEntry', {
         steamId: this.steamId,
         raceNumber: this.raceNumber,
