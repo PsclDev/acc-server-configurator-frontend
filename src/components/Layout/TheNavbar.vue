@@ -1,5 +1,5 @@
 <template>
-  <div class="is-flex is-justify-content-center mb-5">
+  <div class="is-flex is-justify-content-center mb-5 mt-5">
     <div class="width centerContent">
       <a
         :class="
