@@ -21,19 +21,28 @@
             v-for="variation in variations"
             :key="variation.name"
           >
-            <input type="radio" name="variation" :key="variation.trackId" />
+            <input
+              type="radio"
+              name="variation"
+              :key="variation.trackId"
+              :id="variation.trackId"
+              :value="variation.trackId"
+              v-model="pickedVariation"
+            />
             {{ variation.name }}
           </label>
         </div>
-        <a
+        <button
           v-if="!isSelected"
+          :disabled="!pickedVariation.length > 0"
           class="button is-outlined is-link mt-4"
           @click="selectTrack"
-          >Select Track</a
         >
-        <a v-else class="button is-primary mt-4" @click="selectTrack"
-          >Selected</a
-        >
+          Select Track
+        </button>
+        <button v-else class="button is-primary mt-4" @click="selectTrack">
+          Selected
+        </button>
       </div>
     </div>
   </div>
@@ -75,6 +84,11 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      pickedVariation: ''
+    };
+  },
   computed: {
     isSelected() {
       return this.selected;
@@ -87,9 +101,13 @@ export default {
     }
   },
   methods: {
-    selectTrack() {
+    async selectTrack() {
       this.isSelected = !this.isSelected;
       this.$emit('trackSelected', this.name);
+
+      await this.$store.dispatch('editor/selectRacetrack', {
+        track: this.pickedVariation
+      });
     }
   }
 };

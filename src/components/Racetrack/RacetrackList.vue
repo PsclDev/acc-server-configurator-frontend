@@ -38,7 +38,6 @@ export default {
   methods: {
     setTracks(newTracks) {
       this.tracks = newTracks;
-      console.log(this.tracks);
     },
     trackSelected(trackName) {
       let tmpArr = [];
