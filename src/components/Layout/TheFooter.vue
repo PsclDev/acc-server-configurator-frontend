@@ -10,7 +10,11 @@
           >Created by UnRunDead</a
         >
       </h3>
-      <p>Changelogs (Soon)</p>
+      <p>
+        Suggestions for improvement, new feature requests or discovered a bug?
+        Write me on Twitter. Just click on my name
+      </p>
+      <p class="mt-3">Changelogs (Soon)</p>
       <div class="has-text-gray-lighter mt-3">
         <p>Credits</p>
         <p>
