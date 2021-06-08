@@ -74,25 +74,57 @@ export default {
         context.commit(`set${category}`, { list })
     },
     async commitChangesToServer(context) {
-        context.dispatch('commitAssistRulesToServer');
-        context.dispatch('commitConfigurationToServer');
-        context.dispatch('commitEventToServer');
+        //context.dispatch('commitAssistRulesToServer');
+        //context.dispatch('commitConfigurationToServer');
+        //context.dispatch('commitEventToServer');
         context.dispatch('commitEventRulesToServer');
         context.dispatch('commitSettingsToServer');
     },
     async commitAssistRulesToServer(context) {
-
+        await context.dispatch('pushToServer', {
+            category: 'assistRules',
+            targetPath: '/game-files/assistRules'
+        })
     },
     async commitConfigurationToServer(context) {
-
+        await context.dispatch('pushToServer', {
+            category: 'configuration',
+            targetPath: '/game-files/configuration'
+        })
     },
     async commitEventToServer(context) {
-
+        //TODO IS BROKEN
+        await context.dispatch('pushToServer', {
+            category: 'event',
+            targetPath: '/game-files/event'
+        })
     },
     async commitEventRulesToServer(context) {
-
+        await context.dispatch('pushToServer', {
+            category: 'eventRules',
+            targetPath: '/game-files/eventRules'
+        })
     },
     async commitSettingsToServer(context) {
+        await context.dispatch('pushToServer', {
+            category: 'settings',
+            targetPath: '/game-files/settings'
+        })
+    },
+    async pushToServer(context, payload) {
+        let category = payload.category;
+        let list = context.rootGetters[`editor/${category}`];
 
+        const listAsString = JSON.stringify(list);
+        const baseURL = process.env.VUE_APP_API_URL;
+        const url = `${baseURL}${payload.targetPath}`;
+        const token = localStorage.getItem('token');
+
+        await axios.patch(url, listAsString, {
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
     }
 };
