@@ -1,5 +1,8 @@
 <template>
-  <div>
+  <button v-if="isLoading" class="button is-large is-ghost is-loading">
+    Loading
+  </button>
+  <div v-else>
     <base-collapse title="Racetracks">
       <racetrack-list />
     </base-collapse>
@@ -24,7 +27,7 @@
       <settings-list category="settings" :data="settings" />
     </base-collapse>
 
-    <button class="button is-primary is-medium">
+    <button class="button is-primary is-medium" @click="commitChanges">
       Commit Changes to Server
     </button>
   </div>
@@ -38,6 +41,11 @@ export default {
   components: {
     SettingsList,
     RacetrackList
+  },
+  data() {
+    return {
+      isLoading: false
+    };
   },
   computed: {
     assistRules() {
@@ -58,7 +66,14 @@ export default {
   },
   methods: {
     async loadData() {
+      this.isLoading = true;
       await this.$store.dispatch('editor/getEditorContent');
+      this.isLoading = false;
+    },
+    async commitChanges() {
+      this.isLoading = true;
+      await this.$store.dispatch('editor/commitChangesToServer');
+      this.isLoading = false;
     }
   },
   async created() {
