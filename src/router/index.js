@@ -6,6 +6,9 @@ import Entrylist from '../views/Entrylist.vue'
 
 const routes = [
   {
+    path: '/', redirect: '/results'
+  },
+  {
     path: '/settings', component: Editor
   },
   {
