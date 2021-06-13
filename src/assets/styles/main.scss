@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
-$blue: #1a1b26;
-$red: #dd0f1b;
-$darkred: #903749;
-
-$alternative: #53354a;
+@import './variables.scss';
 
 $primary: $red;
-$body-background-color: $blue;
+$body-background-color: $lightblue;
 $family-primary: 'Raleway', sans-serif;
-$table-background-color: #4e5172;
+$table-background-color: $darkblue;
 $table-head-cell-color: white;
 $table-color: white;
 
