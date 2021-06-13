@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <img src="../../assets/images/acc-game-logo.png" />
-    <h1 class="is-size-3 has-text-primary">Server Editor (Alpha)</h1>
+    <h1 class="is-size-3 has-text-primary has-text-weight-bold">
+      Server Editor (Alpha)
+    </h1>
     <a
       class="has-text-white"
       href="http://buymeacoffee.com/unrundead"

@@ -4,7 +4,7 @@
       <img alt="UnRunDead Logo" src="../../assets/images/urdLogo.png" />
       <h3>
         <a
-          class="has-text-primary"
+          class="has-text-primary has-text-weight-bold"
           href="https://twitter.com/unrundead"
           target="_blank"
           >Created by UnRunDead</a
