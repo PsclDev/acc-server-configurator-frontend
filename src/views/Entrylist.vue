@@ -108,8 +108,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '@/assets/styles/variables.scss';
+
 .bg {
-  background-color: #4e5172;
+  background-color: $darkblue;
 }
 </style>
