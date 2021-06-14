@@ -16,11 +16,18 @@
 
       <p class="mt-3">Weather: {{ wetSession }}</p>
     </div>
+
+    <car-item />
   </base-collapse>
 </template>
 
 <script>
+import CarItem from './CarItem.vue';
+
 export default {
+  components: {
+    CarItem
+  },
   props: ['result'],
   computed: {
     raceTitle() {
