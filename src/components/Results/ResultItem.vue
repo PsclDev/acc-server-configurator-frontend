@@ -1,15 +1,20 @@
 <template>
   <base-collapse :title="raceTitle">
-    <div class="container">
-      <p>
-        Best Lap:
-        {{ bestLap }}
-      </p>
+    <div class="container is-size-5">
+      <div class="container is-flex is-justify-content-center">
+        <p>Best Lap:</p>
+        <p class="bestTime ml-2">
+          {{ bestLap }}
+        </p>
+      </div>
       <p>Best Splits:</p>
-      <p>Split 1: {{ bestSplitS1 }}</p>
-      <p>Split 2: {{ bestSplitS2 }}</p>
-      <p>Split 3: {{ bestSplitS3 }}</p>
-      <p>Wet Session? {{ wetSession }}</p>
+      <div class="container is-flex is-justify-content-center">
+        <p class="mr-5 bestLap">Split 1: {{ bestSplitS1 }}</p>
+        <p class="mr-5 bestLap">Split 2: {{ bestSplitS2 }}</p>
+        <p>Split 3: {{ bestSplitS3 }}</p>
+      </div>
+
+      <p class="mt-3">Weather: {{ wetSession }}</p>
     </div>
   </base-collapse>
 </template>
@@ -36,9 +41,17 @@ export default {
     wetSession() {
       const value = this.result.data.sessionResult.isWetSession;
 
-      if (value === 0) return 'No';
-      else return 'Yes';
+      if (value === 0) return 'Dry';
+      else return 'Wet';
     }
   }
 };
 </script>
+
+<style scoped lang="scss">
+@import '@/assets/styles/variables.scss';
+
+.bestTime {
+  color: $purple;
+}
+</style>
