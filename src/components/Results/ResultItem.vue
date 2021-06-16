@@ -34,19 +34,19 @@ export default {
       return this.result.name;
     },
     bestLap() {
-      return this.result.data.sessionResult.bestlap;
+      return this.result.bestlap;
     },
     bestSplitS1() {
-      return this.result.data.sessionResult.bestSplits[0];
+      return this.result.bestSplits.sectorOne;
     },
     bestSplitS2() {
-      return this.result.data.sessionResult.bestSplits[1];
+      return this.result.bestSplits.sectorTwo;
     },
     bestSplitS3() {
-      return this.result.data.sessionResult.bestSplits[2];
+      return this.result.bestSplits.sectorThree;
     },
     wetSession() {
-      const value = this.result.data.sessionResult.isWetSession;
+      const value = this.result.isWetSession;
 
       if (value === 0) return 'Dry';
       else return 'Wet';
