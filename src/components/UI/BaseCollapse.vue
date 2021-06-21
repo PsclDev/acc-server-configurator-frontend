@@ -2,7 +2,7 @@
   <base-card class="boxStyling">
     <div
       class="is-flex is-justify-content-center"
-      :class="isVisible ? 'mb-3' : ''"
+      :class="collapsed ? 'mb-3' : ''"
       @click="toggleView"
     >
       <div class="width centerContent">
@@ -13,12 +13,12 @@
 
       <div class="width rightContent">
         <font-awesome-icon
-          :icon="isVisible ? 'chevron-up' : 'chevron-down'"
+          :icon="collapsed ? 'chevron-up' : 'chevron-down'"
           class="mr-2"
         />
       </div>
     </div>
-    <div :class="isVisible ? '' : 'hide'">
+    <div :class="collapsed ? '' : 'hide'">
       <slot></slot>
     </div>
   </base-card>
@@ -34,12 +34,13 @@ export default {
   },
   data() {
     return {
-      isVisible: false
+      collapsed: false
     };
   },
   methods: {
     toggleView() {
-      this.isVisible = !this.isVisible;
+      this.collapsed = !this.collapsed;
+      this.$emit('collapsedChanged', { collapsed: this.collapsed });
     }
   }
 };
