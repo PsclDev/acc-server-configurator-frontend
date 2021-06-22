@@ -17,18 +17,26 @@
       <p class="mt-3">Weather: {{ wetSession }}</p>
     </div>
 
-    <car-item />
+    <base-collapse title="Cars" @collapsedChanged="collapseChanged">
+      <car-item v-for="car in cars" :key="car.id" :car="car" />
+    </base-collapse>
   </base-collapse>
 </template>
 
 <script>
 import CarItem from './CarItem.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     CarItem
   },
   props: ['result'],
+  data() {
+    return {
+      cars: null
+    };
+  },
   computed: {
     raceTitle() {
       return this.result.name;
@@ -50,6 +58,21 @@ export default {
 
       if (value === 0) return 'Dry';
       else return 'Wet';
+    },
+    ...mapGetters('results', ['getCars'])
+  },
+  methods: {
+    async collapseChanged() {
+      if (this.cars !== null) return;
+      const id = this.result.id;
+
+      await this.$store.dispatch('results/loadCars', {
+        id
+      });
+
+      const cars = this.getCars(id);
+      console.log(cars);
+      this.cars = cars;
     }
   }
 };
