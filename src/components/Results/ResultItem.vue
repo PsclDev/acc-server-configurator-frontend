@@ -18,7 +18,12 @@
     </div>
 
     <base-collapse title="Cars" @collapsedChanged="collapseChanged">
-      <car-item v-for="car in cars" :key="car.id" :car="car" />
+      <car-item
+        v-for="car in cars"
+        :key="car.id"
+        :car="car"
+        :resultId="result.id"
+      />
     </base-collapse>
   </base-collapse>
 </template>
@@ -71,7 +76,6 @@ export default {
       });
 
       const cars = this.getCars(id);
-      console.log(cars);
       this.cars = cars;
     }
   }
