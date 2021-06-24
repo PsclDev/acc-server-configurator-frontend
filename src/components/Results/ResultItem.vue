@@ -23,6 +23,12 @@
         :key="car.id"
         :car="car"
         :resultId="result.id"
+        :bestLapTime="isBestTime(bestLap, car.bestLap)"
+        :bestSectorOne="
+          isBestTime(result.bestSplits.sectorOne, car.bestSplits.sectorOne)
+        "
+        :bestSectorTwo="isBestTime(bestSplitS2, car.bestSplits.sectorTwo)"
+        :bestSectorThree="isBestTime(bestSplitS3, car.bestSplits.sectorThree)"
       />
     </base-collapse>
   </base-collapse>
@@ -47,7 +53,7 @@ export default {
       return this.result.name;
     },
     bestLap() {
-      return this.result.bestlap;
+      return this.result.bestLap;
     },
     bestSplitS1() {
       return this.result.bestSplits.sectorOne;
@@ -77,6 +83,9 @@ export default {
 
       const cars = this.getCars(id);
       this.cars = cars;
+    },
+    isBestTime(bestResult, carResult) {
+      return bestResult === carResult;
     }
   }
 };
