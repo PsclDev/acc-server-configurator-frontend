@@ -1,9 +1,15 @@
 <template>
-  <p>Driver: Max Mustermann</p>
-  <p>Lap Time: 01:00:00</p>
+  <p>{{ driverName }}</p>
+  <p>{{ lap.laptime }}</p>
+  <p>{{ lap.isValidForBest }}</p>
   <p>Best Split</p>
-  <p>Split 1: 00:20:00</p>
-  <p>Split 2: 00:20:00</p>
-  <p>Split 3: 00:20:00</p>
-  <p>Valid Lap?: Yes</p>
+  <p>{{ lap.splits.sectorOne }}</p>
+  <p>{{ lap.splits.sectorTwo }}</p>
+  <p>{{ lap.splits.sectorThree }}</p>
 </template>
+
+<script>
+export default {
+  props: ['driverName', 'lap']
+};
+</script>
