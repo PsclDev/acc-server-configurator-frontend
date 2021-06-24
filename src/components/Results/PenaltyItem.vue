@@ -1,7 +1,13 @@
 <template>
-  <p>Driver: Max Mustermann</p>
-  <p>Reason: Cutting</p>
-  <p>Penalty: Drive Through</p>
-  <p>Violation in Lap: 7</p>
-  <p>Cleared in Lap: 8</p>
+  <p>{{ driverName }}</p>
+  <p>{{ penalty.reason }}</p>
+  <p>{{ penalty.penalty }}</p>
+  <p>{{ penalty.violationInLap }}</p>
+  <p>{{ penalty.clearedInLap }}</p>
 </template>
+
+<script>
+export default {
+  props: ['driverName', 'penalty']
+};
+</script>
