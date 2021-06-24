@@ -4,10 +4,16 @@
     <p>{{ car.teamName }}</p>
     <p>{{ car.raceNumber }}</p>
 
-    <p>{{ car.bestLap }}</p>
-    <p>{{ car.bestSplits.sectorOne }}</p>
-    <p>{{ car.bestSplits.sectorTwo }}</p>
-    <p>{{ car.bestSplits.sectorThree }}</p>
+    <p :class="bestLapTime ? 'bestTime' : ''">{{ car.bestLap }}</p>
+    <p :class="bestSectorOne ? 'bestTime' : ''">
+      {{ car.bestSplits.sectorOne }}
+    </p>
+    <p :class="bestSectorTwo ? 'bestTime' : ''">
+      {{ car.bestSplits.sectorTwo }}
+    </p>
+    <p :class="bestSectorThree ? 'bestTime' : ''">
+      {{ car.bestSplits.sectorThree }}
+    </p>
     <p>{{ car.totalTime }}</p>
     <p>{{ car.lapCount }}</p>
     <p>{{ car.missingMandatoryPitstop }}</p>
@@ -25,7 +31,12 @@
         Loading
       </button>
       <div v-else-if="!isLoadingLaps && laps.length > 0">
-        <lap-item v-for="lap in laps" :key="lap" />
+        <lap-item
+          v-for="lap in laps"
+          :key="lap"
+          :lap="lap"
+          :driverName="getDriverName(lap.driverIndex)"
+        />
       </div>
       <p v-else>No Laps found</p>
     </base-collapse>
@@ -41,7 +52,12 @@
         Loading
       </button>
       <div v-else-if="!isLoadingPenalties && penalties.length">
-        <penalty-item v-for="penalty in penalties" :key="penalty" />
+        <penalty-item
+          v-for="penalty in penalties"
+          :key="penalty"
+          :penalty="penalty"
+          :driverName="getDriverName(penalty.driverIndex)"
+        />
       </div>
       <p v-else>No Penalties found</p>
     </base-collapse>
@@ -56,7 +72,14 @@ import PenaltyItem from './PenaltyItem.vue';
 import { mapGetters } from 'vuex';
 
 export default {
-  props: ['resultId', 'car'],
+  props: [
+    'resultId',
+    'car',
+    'bestLapTime',
+    'bestSectorOne',
+    'bestSectorTwo',
+    'bestSectorThree'
+  ],
   components: {
     DriverItem,
     BaseCollapse,
@@ -102,7 +125,18 @@ export default {
       this.penalties = penalties;
 
       this.isLoadingPenalties = false;
+    },
+    getDriverName(index) {
+      return this.car.drivers[index].name;
     }
   }
 };
 </script>
+
+<style scoped lang="scss">
+@import '@/assets/styles/variables.scss';
+
+.bestTime {
+  color: $purple;
+}
+</style>
