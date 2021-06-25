@@ -1,30 +1,93 @@
 <template>
   <div>
-    <p>{{ car.name }}</p>
-    <p>{{ car.teamName }}</p>
-    <p>{{ car.raceNumber }}</p>
+    <div class="is-flex is-justify-content-space-around">
+      <div
+        class="is-flex is-flex-direction-column is-justify-content-space-around"
+      >
+        <div class="is-flex is-flex-direction-column">
+          <p class="has-text-weight-bold">Model:</p>
+          <p>{{ car.name }}</p>
+        </div>
 
-    <p :class="bestLapTime ? 'bestTime' : ''">{{ car.bestLap }}</p>
-    <p :class="bestSectorOne ? 'bestTime' : ''">
-      {{ car.bestSplits.sectorOne }}
-    </p>
-    <p :class="bestSectorTwo ? 'bestTime' : ''">
-      {{ car.bestSplits.sectorTwo }}
-    </p>
-    <p :class="bestSectorThree ? 'bestTime' : ''">
-      {{ car.bestSplits.sectorThree }}
-    </p>
-    <p>{{ car.totalTime }}</p>
-    <p>{{ car.lapCount }}</p>
-    <p>{{ car.missingMandatoryPitstop }}</p>
+        <div class="is-flex is-flex-direction-column">
+          <p class="has-text-weight-bold">Teamname:</p>
+          <p>{{ car.teamName }}</p>
+        </div>
 
-    <base-collapse title="Drivers">
-      <driver-item
-        v-for="driver in car.drivers"
-        :key="driver.id"
-        :driver="driver"
-      />
-    </base-collapse>
+        <div class="is-flex is-flex-direction-column">
+          <p class="has-text-weight-bold">Racenumber:</p>
+          <p>{{ car.raceNumber }}</p>
+        </div>
+      </div>
+
+      <div
+        class="is-flex is-justify-content-space-around is-align-items-center"
+      >
+        <div class="is-flex is-flex-direction-column mr-5">
+          <p class="has-text-weight-bold">Best Lap:</p>
+          <p :class="bestLapTime ? 'bestTime' : ''">{{ car.bestLap }}</p>
+        </div>
+
+        <div
+          class="
+            is-flex is-flex-direction-column is-justify-content-space-around
+          "
+        >
+          <div class="is-flex is-flex-direction-column">
+            <p class="has-text-weight-bold">Sector 1:</p>
+            <p :class="bestSectorOne ? 'bestTime' : ''">
+              {{ car.bestSplits.sectorOne }}
+            </p>
+          </div>
+
+          <div class="is-flex is-flex-direction-column">
+            <p class="has-text-weight-bold">Sector 2:</p>
+            <p :class="bestSectorTwo ? 'bestTime' : ''">
+              {{ car.bestSplits.sectorTwo }}
+            </p>
+          </div>
+
+          <div class="is-flex is-flex-direction-column">
+            <p class="has-text-weight-bold">Sector 3:</p>
+            <p :class="bestSectorThree ? 'bestTime' : ''">
+              {{ car.bestSplits.sectorThree }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="is-flex is-flex-direction-column is-justify-content-space-around"
+      >
+        <div class="is-flex is-flex-direction-column">
+          <p class="has-text-weight-bold">Total Time:</p>
+          <p>{{ car.totalTime }}</p>
+        </div>
+
+        <div class="is-flex is-flex-direction-column">
+          <p class="has-text-weight-bold">Driven laps:</p>
+          <p>{{ car.lapCount }}</p>
+        </div>
+
+        <div class="is-flex is-flex-direction-column">
+          <p class="has-text-weight-bold">Missed Mandatory Pitstop?</p>
+          <p>{{ pitstop }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <h3 class="has-text-weight-bold is-size-4">Drivers</h3>
+
+      <div class="is-flex is-justify-content-space-around is-flex-wrap-wrap">
+        <driver-item
+          class="my-1"
+          v-for="driver in car.drivers"
+          :key="driver.id"
+          :driver="driver"
+        />
+      </div>
+    </div>
 
     <base-collapse title="Laps" @collapsedChanged="collapseChangedLaps">
       <button v-if="isLoadingLaps" class="button is-large is-ghost is-loading">
@@ -95,6 +158,10 @@ export default {
     };
   },
   computed: {
+    pitstop() {
+      if (parseInt(this.car.missingMandatoryPitstop) > 0) return 'Yes';
+      else return 'No';
+    },
     ...mapGetters('results', ['getLaps', 'getPenalties'])
   },
   methods: {
