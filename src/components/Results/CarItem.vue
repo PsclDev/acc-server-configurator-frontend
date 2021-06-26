@@ -93,7 +93,10 @@
       <button v-if="isLoadingLaps" class="button is-large is-ghost is-loading">
         Loading
       </button>
-      <div v-else-if="!isLoadingLaps && laps.length > 0">
+      <div
+        v-else-if="!isLoadingLaps && laps.length > 0"
+        class="is-flex is-justify-content-space-around is-flex-wrap-wrap"
+      >
         <lap-item
           v-for="lap in laps"
           :key="lap"
@@ -114,7 +117,10 @@
       >
         Loading
       </button>
-      <div v-else-if="!isLoadingPenalties && penalties.length">
+      <div
+        v-else-if="!isLoadingPenalties && penalties.length"
+        class="is-flex is-justify-content-space-around is-flex-wrap-wrap"
+      >
         <penalty-item
           v-for="penalty in penalties"
           :key="penalty"
