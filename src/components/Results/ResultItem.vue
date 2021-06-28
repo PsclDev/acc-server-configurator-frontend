@@ -22,6 +22,7 @@
         v-for="car in cars"
         :key="car.id"
         :car="car"
+        :bgColor="getBgColor(car.id)"
         :resultId="result.id"
         :bestLapTime="isBestTime(bestLap, car.bestLap)"
         :bestSectorOne="
@@ -86,6 +87,9 @@ export default {
     },
     isBestTime(bestResult, carResult) {
       return bestResult === carResult;
+    },
+    getBgColor(id) {
+      if (id % 2 === 0) return '#22222c';
     }
   }
 };

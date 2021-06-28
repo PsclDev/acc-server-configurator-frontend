@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-bind:style="{ 'background-color': `${bgColor}` }">
     <div class="is-flex is-justify-content-space-around">
       <div
         class="is-flex is-flex-direction-column is-justify-content-space-around"
@@ -89,7 +89,11 @@
       </div>
     </div>
 
-    <base-collapse title="Laps" @collapsedChanged="collapseChangedLaps">
+    <base-collapse
+      title="Laps"
+      @collapsedChanged="collapseChangedLaps"
+      v-bind:style="{ 'background-color': `${bgColor}` }"
+    >
       <button v-if="isLoadingLaps" class="button is-large is-ghost is-loading">
         Loading
       </button>
@@ -110,6 +114,7 @@
     <base-collapse
       title="Penalties"
       @collapsedChanged="collapseChangedPenalties"
+      v-bind:style="{ 'background-color': `${bgColor}` }"
     >
       <button
         v-if="isLoadingPenalties"
@@ -142,6 +147,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   props: [
+    'bgColor',
     'resultId',
     'car',
     'bestLapTime',
